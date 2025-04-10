@@ -13,7 +13,7 @@ Deck::Deck() {
     //vector<Card> m_Deck;
     vector<string> suits{"Hearts", "Diamonds", "Spades", "Clubs"};
     vector<string> ranks{ "2", "3", "4", "5", "6", "7", "8", "9", "18", "Jack", "Queen", "King", "Ace"};
-    vector<int> values{2,3,4,5,6,7,8,19,10,10,10,10,11};
+    vector<int> values{2,3,4,5,6,7,8,9,10,10,10,10,11};
     for(int i = 0; i < suits.size(); i++) {
         for(int j = 0; j < ranks.size(); j++) {
             m_cardDeck.push_back(Card(suits[i], ranks[j], values[j]));
