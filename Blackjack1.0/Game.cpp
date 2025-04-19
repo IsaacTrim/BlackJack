@@ -56,7 +56,7 @@ void playGame(){
    cout << "#  The Game of Blackjack  #" << endl;
    cout << "###########################" << endl << endl;
    char playY/N = 'y';
-   while (playY/N == 'y' || playY/N == 'Y') {
+   while (playY/N == 'y') {
      char choice;
      m_deck = Deck();
      playerHand.clear_hand();
@@ -67,17 +67,15 @@ void playGame(){
      do {
        cout << "hit or stand? (h/s): ";
        cin >> choice;
-       if (choice == 'h' || choice == 'H') {
+       if (choice == 'h') {
          playerHand += m_deck.dealCard();
-         cout << endl<<"Your Cards: "<<endl;
+         cout << endl<<"Your Cards: " << endl;
          for (int i = 0; i < playerHand.cardCount(); i++) {
            cout << playerHand.displayCard(i).getCard() << endl;
          }
                cout << endl;
            }
-           //test
-           //cout << playerHand.getPoints();
-       } while ((choice == 'h' || choice == 'H') && playerHand.getPoints() < 21);
+       } while ((choice == 'h') && playerHand.getPoints() < 21);
        if (playerHand.getPoints() <= 21) {
            while (DealerHand.getPoints() < 17) {
                DealerHand += m_deck.dealCard();
@@ -88,38 +86,32 @@ void playGame(){
            cout << DealerHand.displayCard(i).getCard() << endl;
        }
        cout << endl;
-
-
        cout << "Your Points: " << playerHand.getPoints() << endl;
        cout << "Dealer's Points: " << DealerHand.getPoints() << endl;
-
-
        int pPoints = playerHand.getPoints();
        int dPoints = DealerHand.getPoints();
-
-
        if (pPoints > 21) {
            cout << "Sorry. You busted. You lose." << endl;
        }
-       else if (pPoints < dealerPoints && dealerPoints == 21 ) {
+       else if (pPoints < dPoints && dPoints == 21 ) {
            cout <<"Dealer has Blackjack. You lose." << endl;
        }
-       else if (pPoints > dealerPoints && playerPoints == 21 ) {
+       else if (pPoints > dPoints && dPoints == 21 ) {
            cout <<"Blackjack! You win!"<<endl;
        }
-       else if (pPoints == dealerPoints && playerPoints == 21 ) {
+       else if (pPoints == dPoints && dPoints == 21 ) {
            cout <<"Dang, dealer has blackjack too. You push."<<endl;
        }
        else if (dPoints > 21) {
            cout << "Yay! The dealer busted. You win!"<<endl;
        }
-       else if (pPoints > dealerPoints) {
+       else if (pPoints > dPoints) {
            cout << "Hooray! You win!"<<endl;
        }
-       else if (pPoints < dealerPoints) {
+       else if (pPoints < dPoints) {
            cout << "Sorry. You lose."<<endl;
        }
-       else if(pPoints == dealerPoints) {
+       else if(pPoints == dPoints) {
            cout << "It's a tie!, you push"<<endl;
        }
        else {

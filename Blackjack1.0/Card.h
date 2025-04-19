@@ -13,7 +13,6 @@ class Card {
     string getRank();
     int getValue();
     string getCard();
-
 };
 
 #endif //CARD_H
