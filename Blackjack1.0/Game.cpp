@@ -1,7 +1,3 @@
-//
-// Created by administrator on 4/15/25.
-//
-
 #include "Game.h"
 #include <iostream>
 
