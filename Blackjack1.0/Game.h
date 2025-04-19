@@ -1,21 +1,17 @@
-//
-// Created by administrator on 4/15/25.
-//
-
 #ifndef GAME_H
 #define GAME_H
 #include "Hand.h"
-
-
-class Game {
+#include <iostream>
+#include "Deck.h"
+class Game{
  Deck m_deck;
  Hand m_dealerHand;
  Hand m_playerHand;
  public:
  Game();
- Hand getPlayerHand(Deck, Hand);
- Hand getDealerHand(Deck, Hand);
- void displayCards(Hand, string);
+ Hand getPlayerHand(Deck&deck, Hand &hand);
+ Hand getDealerHand(Deck &deck, Hand &hand);
+ void displayCards(Hand hand, string pd);
  void displayRound();
  void playGame();
 };

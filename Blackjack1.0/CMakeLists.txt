@@ -9,4 +9,6 @@ add_executable(Blackjack1_0 main.cpp
         Card.cpp
         Card.h
         Hand.cpp
-        Hand.h)
+        Hand.h
+        Game.h
+        Game.cpp)
